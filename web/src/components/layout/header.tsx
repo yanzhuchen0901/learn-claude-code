@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -8,9 +8,10 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
-  { key: "timeline", href: "/timeline" },
-  { key: "compare", href: "/compare" },
-  { key: "layers", href: "/layers" },
+  { key: 'timeline', href: '/timeline' },
+  { key: 'compare', href: '/compare' },
+  { key: 'layers', href: '/layers' },
+  { key: 'dashboard', href: '/dashboard' },
 ] as const;
 
 const LOCALES = [
@@ -164,3 +165,5 @@ export function Header() {
     </header>
   );
 }
+
+

@@ -1,0 +1,25 @@
+{
+  "team_name": "default",
+  "members": [
+    {
+      "name": "alice",
+      "role": "Frontend Developer",
+      "status": "working"
+    },
+    {
+      "name": "bob",
+      "role": "Backend Developer",
+      "status": "shutdown"
+    },
+    {
+      "name": "coder",
+      "role": "General Developer",
+      "status": "working"
+    },
+    {
+      "name": "task-bot",
+      "role": "Task Worker",
+      "status": "shutdown"
+    }
+  ]
+}

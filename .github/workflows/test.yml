@@ -1,8 +1,8 @@
-name: Test
+name: Tests (All Branches)
 
 on:
   push:
-    branches: [main]
+    branches-ignore: [main]
   pull_request:
     branches: [main]
 
@@ -18,10 +18,12 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install anthropic python-dotenv pytest
+        run: |
+          pip install -r requirements.txt
+          pip install pytest
 
       - name: Run Python smoke tests
-        run: python -m pytest tests/test_agents_smoke.py -q
+        run: python -m pytest tests/test_agents_smoke.py -v
 
   web-build:
     runs-on: ubuntu-latest
@@ -40,6 +42,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Type check
+        run: npx tsc --noEmit
 
       - name: Build
         run: npm run build
